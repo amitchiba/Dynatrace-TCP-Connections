@@ -1,0 +1,161 @@
+{
+    "name": "custom.python.tcp_connections_plugin",
+    "version": "0.03",
+    "type": "python",
+    "entity": "HOST",
+    "processTypeNames": [ "WINDOWS_SYSTEM" ],
+    "source": {
+        "package": "tcp_connections_plugin",
+        "className": "tcpCountPlugin",
+        "install_requires": [ ],
+        "activation": "Singleton"
+    },
+    "metrics": [
+        {
+            "timeseries": {
+                "key": "tcpEstablished",
+                "unit": "Count",
+                "displayname": "netstat_Established"
+            }
+        },
+        {
+            "timeseries": {
+                "key": "tcpTimeWait",
+                "unit": "Count",
+                "displayname": "netstat_TimeWait"
+            }
+        },
+        {
+            "timeseries": {
+                "key": "tcpSynSent",
+                "unit": "Count",
+                "displayname": "netstat_SynSent"
+            }
+        },
+        {
+            "timeseries": {
+                "key": "tcpSynReceived",
+                "unit": "Count",
+                "displayname": "netstat_SynReceived"
+            }
+        },
+        {
+            "timeseries": {
+                "key": "tcpListening",
+                "unit": "Count",
+                "displayname": "netstat_Listening"
+            }
+        },
+        {
+            "timeseries": {
+                "key": "tcpCloseWait",
+                "unit": "Count",
+                "displayname": "netstat_CloseWait"
+            }
+        },
+        {
+            "timeseries": {
+                "key": "tcpFinWait",
+                "unit": "Count",
+                "displayname": "netstat_finWait"
+            }
+        },
+        {
+            "timeseries": {
+                "key": "tcpLastAck",
+                "unit": "Count",
+                "displayname": "netstat_LastAcknowledged"
+            }
+        },
+        {
+            "timeseries": {
+                "key": "tcpClosed",
+                "unit": "Count",
+                "displayname": "netstat_Closed"
+            }              
+        }
+    ],
+	"ui": {
+		"charts": [
+            {
+                "group": "TCP Connections",
+                "title": "TCP Statistics",
+                "description": "TCP Statistics",
+                "series": [
+                    {
+                        "key": "tcpEstablished",
+                        "displayname": "Max Number of Established Connections",
+                        "aggregation": "max",
+                        "seriestype": "line",
+                        "stacked": false,
+                        "color": "#e31a1c"
+                    },
+                    {
+                        "key": "tcpTimeWait",
+                        "displayname": "Time Wait",
+                        "aggregation": "max",
+                        "seriestype": "line",
+                        "stacked": false,
+                        "color": "#e31a1c"
+                    },
+                    {
+                        "key": "tcpSynSent",
+                        "displayname": "Number of SynSent Errors",
+                        "aggregation": "max",
+                        "seriestype": "line",
+                        "stacked": false,
+                        "color": "#e31a1c"
+                    },
+                    {
+                        "key": "tcpSynReceived",
+                        "displayname": "Number of SynReceived Errors",
+                        "aggregation": "max",
+                        "seriestype": "line",
+                        "stacked": false,
+                        "color": "#e31a1c"
+                    },
+                    {
+                        "key": "tcpListening",
+                        "displayname": "Number of Listening Connections",
+                        "aggregation": "max",
+                        "seriestype": "line",
+                        "stacked": false,
+                        "color": "#e31a1c"
+                    },
+                    {
+                        "key": "tcpCloseWait",
+                        "displayname": "Number of Close Wait Sockets",
+                        "aggregation": "max",
+                        "seriestype": "line",
+                        "stacked": false,
+                        "color": "#e31a1c"
+                    },
+                    {
+                        "key": "tcpFinWait",
+                        "displayname": "Number of Fin Wait sessions",
+                        "aggregation": "max",
+                        "seriestype": "line",
+                        "stacked": false,
+                        "color": "#e31a1c"
+                    },
+                    {
+                        "key": "tcpLastAck",
+                        "displayname": "Number of Last Acknowledged Sessions",
+                        "aggregation": "max",
+                        "seriestype": "line",
+                        "stacked": false,
+                        "color": "#e31a1c"
+                    },
+                    {
+                        "key": "tcpClosed",
+                        "displayname": "Closed Sessions",
+                        "aggregation": "max",
+                        "seriestype": "line",
+                        "stacked": false,
+                        "color": "#e31a1c"
+                    }      
+                ]
+            }
+        ]
+    }
+}
